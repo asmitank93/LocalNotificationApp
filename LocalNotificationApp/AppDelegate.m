@@ -13,10 +13,15 @@
 @end
 
 @implementation AppDelegate
+@synthesize nav;
 
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
     // Override point for customization after application launch.
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)])
+    {
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+    }
     return YES;
 }
 
@@ -24,7 +29,31 @@
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    ViewController *mytbl=[storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
+    
+    MYTableViewController *mytbl2=[storyboard instantiateViewControllerWithIdentifier:@"MYTableViewController"];
+    
+    nav=[[UINavigationController alloc]initWithRootViewController:mytbl2];
+    
+    self.window.rootViewController=nav;
+    
+    [nav pushViewController:mytbl animated:YES];
+}
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    if (application.applicationState==UIApplicationStateInactive)
+    {
+    [UIApplication sharedApplication].applicationIconBadgeNumber=0;
+     
+        UIAlertView *alrt=[[UIAlertView alloc]initWithTitle:@"Notification" message:notification.alertBody delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        [alrt show];
 
+    }
+}
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.

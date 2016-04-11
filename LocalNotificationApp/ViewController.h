@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+- (IBAction)btn_action:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *txt_msg;
+@property (weak, nonatomic) IBOutlet UIDatePicker *dt_pkr;
 
 
 @end

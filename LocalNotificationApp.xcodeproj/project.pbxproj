@@ -14,6 +14,7 @@
 		E72063951C3153F800B57140 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E72063941C3153F800B57140 /* Images.xcassets */; };
 		E72063981C3153F800B57140 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E72063961C3153F800B57140 /* LaunchScreen.xib */; };
 		E72063A41C3153F800B57140 /* LocalNotificationAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E72063A31C3153F800B57140 /* LocalNotificationAppTests.m */; };
+		E72063B11C315B8400B57140 /* MYTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E72063B01C315B8400B57140 /* MYTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		E720639D1C3153F800B57140 /* LocalNotificationAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalNotificationAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E72063A21C3153F800B57140 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E72063A31C3153F800B57140 /* LocalNotificationAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalNotificationAppTests.m; sourceTree = "<group>"; };
+		E72063AF1C315B8400B57140 /* MYTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYTableViewController.h; sourceTree = "<group>"; };
+		E72063B01C315B8400B57140 /* MYTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 		E720637B1C3153F800B57140 = {
 			isa = PBXGroup;
 			children = (
+				E72063AF1C315B8400B57140 /* MYTableViewController.h */,
+				E72063B01C315B8400B57140 /* MYTableViewController.m */,
 				E72063861C3153F800B57140 /* LocalNotificationApp */,
 				E72063A01C3153F800B57140 /* LocalNotificationAppTests */,
 				E72063851C3153F800B57140 /* Products */,
@@ -222,6 +227,7 @@
 				E72063901C3153F800B57140 /* ViewController.m in Sources */,
 				E720638D1C3153F800B57140 /* AppDelegate.m in Sources */,
 				E720638A1C3153F800B57140 /* main.m in Sources */,
+				E72063B11C315B8400B57140 /* MYTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
